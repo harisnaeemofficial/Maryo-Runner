@@ -76,7 +76,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
     {
         Gdx.input.setCatchBackKey(true);
         Gdx.input.setInputProcessor(this);
-        music = Assets.manager.get(loader.getLevel().getMusic().first());
+        music = Assets.manager.get(loader.level.music);
         if (Assets.playMusic)music.play();
     }
 
@@ -127,7 +127,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
 
     private void drawObjects(float deltaTime)
     {
-        for (GameObject gameObject : loader.getLevel().getGameObjects())
+        for (GameObject gameObject : loader.level.gameObjects)
         {
 			gameObject.update(deltaTime);
             gameObject.render(batch);
@@ -174,7 +174,6 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
         Assets.dispose();
         bgColor.dispose();
         batch.dispose();
-        bgr1.dispose();
         exitDialog.dispose();
         music.stop();
     }

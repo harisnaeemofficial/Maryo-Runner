@@ -83,7 +83,7 @@ public class World
         float wH = Constants.CAMERA_HEIGHT + 1;
         Rectangle worldBounds = rectPool.obtain();
 		worldBounds.set(wX, wY, wW, wH);
-        for (GameObject object : level.getGameObjects())
+        for (GameObject object : level.gameObjects)
         {
             Rectangle bounds = object.getBounds();
             if (bounds.overlaps(worldBounds)/* || object instanceof Enemy*/)
@@ -104,7 +104,7 @@ public class World
         float wH = center.getBody().y + center.getBody().height + offset * 2;
         Rectangle offsetBounds = rectPool.obtain();
 		offsetBounds.set(wX, wY, wW, wH);
-        for (GameObject object : level.getGameObjects())
+        for (GameObject object : level.gameObjects)
         {
             Rectangle bounds = object.getBounds();
             if (bounds.overlaps(offsetBounds)/* || object instanceof Enemy*/)

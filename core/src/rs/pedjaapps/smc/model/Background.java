@@ -4,8 +4,6 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.graphics.g2d.*;
 
-import javax.xml.soap.Text;
-
 import rs.pedjaapps.smc.Assets;
 import rs.pedjaapps.smc.utility.Constants;
 
@@ -36,9 +34,13 @@ public class Background
 		height = bgr.height;
 	}
 	
-	public void render(SpriteBatch spriteBatch, OrthographicCamera cam)
+	public void renderColor(Camera camera)
 	{
-		bgColor.render(cam);
+		bgColor.render(camera);
+	}
+	
+	public void render(SpriteBatch spriteBatch)
+	{
 		spriteBatch.draw(Assets.manager.get(textureName, Texture.class), position.x, position.y, width, height);
 	}
 }

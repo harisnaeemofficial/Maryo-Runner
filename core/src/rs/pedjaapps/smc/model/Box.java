@@ -130,10 +130,10 @@ public class Box extends Sprite
         }
 	}
 	
-	public static Box initBox(World world, JSONObject jBox, LevelGenerator loader) throws JSONException
+	/*public static Box initBox(World world, JSONObject jBox, LevelGenerator loader) throws JSONException
 	{
 		Vector3 position = new Vector3((float) jBox.getDouble(LevelGenerator.KEY.posx.toString()), (float) jBox.getDouble(LevelGenerator.KEY.posy.toString()), 0);
-		Vector2 size = new Vector2(SIZE, SIZE/*(float) jBox.getDouble(LevelLoader.KEY.width.toString()), (float) jBox.getDouble(LevelLoader.KEY.height.toString())*/);
+		Vector2 size = new Vector2(SIZE, SIZE);
 		
 		Box box = new Box(world, size, position);
 		
@@ -165,7 +165,7 @@ public class Box extends Sprite
 				break;
 		}
 		return box;
-	}
+	}*/
 	
 	public static void createCoin(Box box, LevelGenerator loader)
 	{
@@ -185,7 +185,7 @@ public class Box extends Sprite
 		coin.visible = false;
 		
 		box.itemObject = coin;
-		loader.getLevel().getGameObjects().add(coin);
+		loader.level.gameObjects.add(coin);
 	}
 	
 	public void handleHitByPlayer()

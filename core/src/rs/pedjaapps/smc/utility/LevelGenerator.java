@@ -37,7 +37,7 @@ import rs.pedjaapps.smc.model.items.Item;
  */
 public class LevelGenerator
 {
-    Level level;
+    public Level level;
 
 	private enum ObjectClass
 	{
@@ -73,23 +73,25 @@ public class LevelGenerator
 		level.background = new Background(new Vector2(0, 0), "data/game/background/green_junglehills.png", backgroundColor);
 
 		//load ground for visible area(screen width)
+		float start = -0.328125f;
 		for(int i = 0; i < Constants.CAMERA_WIDTH; i++)
 		{
-			float posx;//TODO gen posx
-			Sprite sprite = new Sprite(world, new Vector2(1, 1), new Vector3(posx,-0.265625f));
+			float posx = start + i;
+			Sprite sprite = new Sprite(world, new Vector2(1, 1), new Vector3(posx,-0.265625f, m_pos_z_massive_start));
 			sprite.setTextureName("data/ground/green_3/ground/top/1.png");
 			sprite.setType(Sprite.Type.massive);
+			Assets.manager.load(sprite.getTextureName(), Texture.class);
 		}
 	}
 
 	/**
 	 * Called from screens render method to generate more data for level*/
-	public void update()
+	public void update(World world)
 	{
 
 	}
 
-	private void parseGameObjects(World world, MarioController controller, JSONObject level) throws JSONException
+	/*private void parseGameObjects(World world, MarioController controller, JSONObject level) throws JSONException
 	{
 		JSONArray jObjects =  level.getJSONArray(KEY.objects.toString());
 		for (int i = 0; i < jObjects.length(); i++)
@@ -389,23 +391,7 @@ public class LevelGenerator
 
     }
 
-    /*public Body createBody(World world, Vector2 position, float width, float height, boolean enemyFilter)
-    {
-        BodyDef groundBodyDef = new BodyDef();
-        groundBodyDef.position.set(position.x + width / 2, position.y + height / 2);
-
-		Body body = world.createBody(groundBodyDef);
-
-		PolygonShape groundBox = new PolygonShape();
-
-		groundBox.setAsBox(width / 2, height / 2);
-
-		body.createFixture(groundBox, 0.0f);
-        if(enemyFilter)body.setUserData(new Collider());
-
-		groundBox.dispose();
-        return body;
-    }*/
+    
 
     public Level getLevel()
     {
@@ -500,7 +486,7 @@ public class LevelGenerator
     {
 		Box box = Box.initBox(world, jBox, this);
 		level.getGameObjects().add(box);
-    }
+    }*/
 	
 	/** Comparator used for sorting, sorts in ascending order (biggset z to smallest z).
 	 * @author mzechner */
