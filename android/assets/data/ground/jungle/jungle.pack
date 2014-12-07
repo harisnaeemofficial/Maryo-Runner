@@ -1,0 +1,402 @@
+
+jungle.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beanstalk
+  rotate: false
+  xy: 2, 508
+  size: 256, 512
+  orig: 256, 512
+  offset: 0, 0
+  index: -1
+beanstalk-2
+  rotate: false
+  xy: 758, 2
+  size: 128, 256
+  orig: 128, 256
+  offset: 0, 0
+  index: -1
+big-plant-1
+  rotate: false
+  xy: 762, 764
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+big-plant-2
+  rotate: false
+  xy: 888, 2
+  size: 128, 256
+  orig: 128, 256
+  offset: 0, 0
+  index: -1
+bridge-frame-back
+  rotate: false
+  xy: 260, 770
+  size: 500, 250
+  orig: 500, 250
+  offset: 0, 0
+  index: -1
+bridge-frame-front
+  rotate: false
+  xy: 260, 518
+  size: 500, 250
+  orig: 500, 250
+  offset: 0, 0
+  index: -1
+bridge-rope-back
+  rotate: false
+  xy: 762, 512
+  size: 250, 250
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+bridge-rope-front
+  rotate: false
+  xy: 506, 266
+  size: 250, 250
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+tree-1
+  rotate: false
+  xy: 506, 14
+  size: 250, 250
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+tree-1-front
+  rotate: false
+  xy: 758, 260
+  size: 250, 250
+  orig: 250, 250
+  offset: 0, 0
+  index: -1
+tree-2
+  rotate: false
+  xy: 254, 6
+  size: 250, 500
+  orig: 250, 500
+  offset: 0, 0
+  index: -1
+tree-2-front
+  rotate: false
+  xy: 2, 6
+  size: 250, 500
+  orig: 250, 500
+  offset: 0, 0
+  index: -1
+
+jungle2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+berry-1
+  rotate: false
+  xy: 912, 910
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+berry-2
+  rotate: false
+  xy: 652, 390
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+bridge-plank
+  rotate: false
+  xy: 522, 292
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+grass-1
+  rotate: false
+  xy: 2, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+grass-2
+  rotate: false
+  xy: 132, 130
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+grass-3
+  rotate: false
+  xy: 782, 520
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+grass-4
+  rotate: false
+  xy: 2, 718
+  size: 128, 256
+  orig: 128, 256
+  offset: 0, 0
+  index: -1
+ground-bottom-1
+  rotate: false
+  xy: 2, 588
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-bottom-2
+  rotate: false
+  xy: 132, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-bottom-left
+  rotate: false
+  xy: 2, 458
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-bottom-right
+  rotate: false
+  xy: 132, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-middle-left
+  rotate: false
+  xy: 262, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-middle-right
+  rotate: false
+  xy: 2, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-top-1
+  rotate: false
+  xy: 132, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-top-2
+  rotate: false
+  xy: 262, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-top-left
+  rotate: false
+  xy: 392, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-halfmassive-top-right
+  rotate: false
+  xy: 2, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-1
+  rotate: false
+  xy: 132, 456
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-2
+  rotate: false
+  xy: 262, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-left
+  rotate: false
+  xy: 2, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-left-bottom
+  rotate: false
+  xy: 392, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-left-top
+  rotate: false
+  xy: 522, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-right
+  rotate: false
+  xy: 392, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-right-bottom
+  rotate: false
+  xy: 132, 326
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-right-top
+  rotate: false
+  xy: 262, 456
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-left
+  rotate: false
+  xy: 132, 196
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-left-bottom
+  rotate: false
+  xy: 522, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-left-top
+  rotate: false
+  xy: 652, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-right
+  rotate: false
+  xy: 522, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-right-bottom
+  rotate: false
+  xy: 262, 326
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-middle-right-top
+  rotate: false
+  xy: 392, 456
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-top-1
+  rotate: false
+  xy: 652, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-top-2
+  rotate: false
+  xy: 782, 846
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-top-left
+  rotate: false
+  xy: 262, 196
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-plain-top-right
+  rotate: false
+  xy: 392, 326
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-1
+  rotate: false
+  xy: 522, 456
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-2
+  rotate: false
+  xy: 652, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-left
+  rotate: false
+  xy: 782, 716
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-right
+  rotate: false
+  xy: 392, 196
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+kplant
+  rotate: false
+  xy: 262, 130
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+kplant-head
+  rotate: false
+  xy: 132, 64
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+vine-bottom
+  rotate: false
+  xy: 522, 326
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+vine-middle
+  rotate: false
+  xy: 652, 456
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+vine-top
+  rotate: false
+  xy: 782, 586
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

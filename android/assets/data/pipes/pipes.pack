@@ -1,0 +1,145 @@
+
+pipes.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blue-small-up
+  rotate: false
+  xy: 2, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+blue-small-ver
+  rotate: false
+  xy: 776, 392
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+blue-up
+  rotate: false
+  xy: 2, 328
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+blue-ver
+  rotate: false
+  xy: 2, 198
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+gree-up
+  rotate: false
+  xy: 260, 328
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+green-small-up
+  rotate: false
+  xy: 132, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+green-small-ver
+  rotate: false
+  xy: 776, 326
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+green-ver
+  rotate: false
+  xy: 2, 68
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+grey-small-up
+  rotate: false
+  xy: 262, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+grey-small-ver
+  rotate: false
+  xy: 776, 260
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+grey-up
+  rotate: false
+  xy: 260, 198
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+grey-ver
+  rotate: false
+  xy: 392, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+orange-small-up
+  rotate: false
+  xy: 776, 194
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+orange-small-ver
+  rotate: false
+  xy: 522, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+orange-up
+  rotate: false
+  xy: 518, 328
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+orange-ver
+  rotate: false
+  xy: 260, 68
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+yallow-small-ver
+  rotate: false
+  xy: 776, 128
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+yallow-up
+  rotate: false
+  xy: 518, 198
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+yellow-small-up
+  rotate: false
+  xy: 652, 2
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+yellow-ver
+  rotate: false
+  xy: 518, 68
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1

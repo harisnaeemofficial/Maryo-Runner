@@ -17,14 +17,13 @@ public class MarioController
 
     enum Keys
     {
-        LEFT, RIGHT, UP, DOWN, JUMP, FIRE
+        /*LEFT, RIGHT,*/ UP, DOWN, JUMP, FIRE
     }
 
     private static final long LONG_JUMP_PRESS = 150l;
     private static final float MAX_JUMP_SPEED = 9f;
     
     private World world;
-    private Maryo maryo;
     private boolean jumped;
 
     private long jumpClickTime;
@@ -34,12 +33,11 @@ public class MarioController
     public MarioController(World world)
     {
         this.world = world;
-        this.maryo = world.getMario();
     }
 
     // ** Key presses and touches **************** //
 
-    public void leftPressed()
+    /*public void leftPressed()
     {
         keys.add(Keys.LEFT);
     }
@@ -47,7 +45,7 @@ public class MarioController
     public void rightPressed()
     {
         keys.add(Keys.RIGHT);
-    }
+    }*/
 
     public void upPressed()
     {
@@ -61,13 +59,13 @@ public class MarioController
 
     public void jumpPressed()
     {
-        if(maryo.isGrounded())
+        if(world.level.maryo.isGrounded())
         {
             keys.add(Keys.JUMP);
 
             if(Assets.playSounds)
             {
-                Sound sound = maryo.jumpSound;
+                Sound sound = world.level.maryo.jumpSound;
                 if(sound != null)sound.play();
             }
             jumpClickTime = System.currentTimeMillis();
@@ -79,7 +77,7 @@ public class MarioController
         keys.add(Keys.FIRE);
     }
 
-    public void leftReleased()
+    /*public void leftReleased()
     {
         keys.remove(Keys.LEFT);
     }
@@ -87,7 +85,7 @@ public class MarioController
     public void rightReleased()
     {
         keys.remove(Keys.RIGHT);
-    }
+    }*/
 
     public void upReleased()
     {
@@ -115,16 +113,22 @@ public class MarioController
      */
     public void update(float delta)
     {
-        maryo.setGrounded(maryo.position.y - maryo.groundY < 0.1f);
-		if(!maryo.isGrounded())
+        world.level.maryo.setGrounded(world.level.maryo.position.y - world.level.maryo.groundY < 0.1f);
+		if(!world.level.maryo.isGrounded())
 		{
-			maryo.setWorldState(Maryo.WorldState.JUMPING);
+            world.level.maryo.setWorldState(Maryo.WorldState.JUMPING);
 		}
         processInput();
-        if (maryo.isGrounded() && maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+        if (world.level.maryo.isGrounded() && world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
         {
-            maryo.setWorldState(Maryo.WorldState.IDLE);
+            world.level.maryo.setWorldState(Maryo.WorldState.IDLE);
         }
+        world.level.maryo.setFacingLeft(false);
+        if (!world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING) && !world.level.maryo.getWorldState().equals(Maryo.WorldState.DUCKING))
+        {
+            world.level. maryo.setWorldState(Maryo.WorldState.WALKING);
+        }
+        world.level.maryo.velocity.set(world.level.maryo.velocity.x += Maryo.ACCELERATION, world.level.maryo.velocity.y, world.level.maryo.velocity.z);
 	}
 
     /**
@@ -132,60 +136,55 @@ public class MarioController
      */
     private boolean processInput()
     {
-        Vector3 vel = maryo.getVelocity();
-        Vector3 pos = maryo.getPosition();
+        Vector3 vel = world.level.maryo.velocity;
+        Vector3 pos = world.level.maryo.position;
         if (keys.contains(Keys.JUMP))
         {
             if (!jumped && vel.y < MAX_JUMP_SPEED && System.currentTimeMillis() - jumpClickTime < LONG_JUMP_PRESS)
             {
-                maryo.setVelocity(vel.x, vel.y += 2f);
+                world.level.maryo.velocity.set(vel.x, vel.y += 2f, vel.z);
             }
             else
             {
                 jumped = true;
             }
         }
-        if (keys.contains(Keys.LEFT))
+        /*if (keys.contains(Keys.LEFT))
         {
             // left is pressed
-            maryo.setFacingLeft(true);
-            if (!maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+            world.level.maryo.setFacingLeft(true);
+            if (!world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
             {
-                maryo.setWorldState(Maryo.WorldState.WALKING);
+                world.level.maryo.setWorldState(Maryo.WorldState.WALKING);
             }
-            maryo.setVelocity(vel.x = -4f, vel.y);
+            world.level.maryo.velocity.set(vel.x = -4f, vel.y, vel.z);
         }
         else if (keys.contains(Keys.RIGHT))
         {
             // right is pressed
-            maryo.setFacingLeft(false);
-            if (!maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+            world.level.maryo.setFacingLeft(false);
+            if (!world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
             {
-                maryo.setWorldState(Maryo.WorldState.WALKING);
+                world.level. maryo.setWorldState(Maryo.WorldState.WALKING);
             }
-            maryo.setVelocity(vel.x = +4f, vel.y);
-        }
+            world.level.maryo.velocity.set(vel.x = +4f, vel.y, vel.z);
+        }*/
         else if (keys.contains(Keys.DOWN))
         {
-            if (!maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+            if (!world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
             {
-                maryo.setWorldState(Maryo.WorldState.DUCKING);
+                world.level.maryo.setWorldState(Maryo.WorldState.DUCKING);
             }
         }
         else
         {
-            if (!maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+            if (!world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
             {
-                maryo.setWorldState(Maryo.WorldState.IDLE);
+                world.level.maryo.setWorldState(Maryo.WorldState.IDLE);
             }
             //slowly decrease linear velocity on x axes
-            maryo.setVelocity(vel.x * 0.7f, /*vel.y > 0 ? vel.y * 0.7f : */vel.y);
+            world.level.maryo.velocity.set(vel.x * 0.7f, /*vel.y > 0 ? vel.y * 0.7f : */vel.y, vel.z);
         }
         return false;
-    }
-
-    public void setMaryo(Maryo mario)
-    {
-        this.maryo = mario;
     }
 }

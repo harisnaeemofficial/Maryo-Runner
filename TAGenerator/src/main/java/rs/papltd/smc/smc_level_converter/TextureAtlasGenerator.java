@@ -10,8 +10,9 @@ public class TextureAtlasGenerator
 {
     public static void main(String[] args)
     {
-        String path = "/home/pedja/workspace/SMC-Android/data/temp";
-        TexturePacker2.process(path, path, "controls.pack");
+        String path = "/home/pedja/workspace/Maryo-Runner/android/assets/data/enemy/thromp";
+        TexturePacker2.process(path, path, "thromp.pack");
+        System.out.println("end");
     }
 }
 

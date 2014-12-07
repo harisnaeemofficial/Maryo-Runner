@@ -1,0 +1,82 @@
+
+green_1.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big
+  rotate: false
+  xy: 2, 254
+  size: 500, 250
+  orig: 500, 250
+  offset: 0, 0
+  index: 1
+big
+  rotate: false
+  xy: 2, 2
+  size: 500, 250
+  orig: 500, 250
+  offset: 0, 0
+  index: 2
+kplant
+  rotate: false
+  xy: 756, 249
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+kplant_head
+  rotate: false
+  xy: 504, 21
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+medium
+  rotate: false
+  xy: 504, 379
+  size: 500, 125
+  orig: 500, 125
+  offset: 0, 0
+  index: 1
+medium
+  rotate: false
+  xy: 504, 314
+  size: 250, 63
+  orig: 250, 63
+  offset: 0, 0
+  index: 2
+plant_m
+  rotate: false
+  xy: 886, 345
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+plant_r
+  rotate: false
+  xy: 756, 183
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+small
+  rotate: false
+  xy: 504, 249
+  size: 250, 63
+  orig: 250, 63
+  offset: 0, 0
+  index: 1
+small
+  rotate: false
+  xy: 504, 151
+  size: 250, 31
+  orig: 250, 31
+  offset: 0, 0
+  index: 2
+wild_medium
+  rotate: false
+  xy: 504, 184
+  size: 250, 63
+  orig: 250, 63
+  offset: 0, 0
+  index: -1

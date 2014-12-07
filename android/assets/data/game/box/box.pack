@@ -1,0 +1,138 @@
+
+box.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bonus-1
+  rotate: false
+  xy: 2, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+bonus-2
+  rotate: false
+  xy: 2, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+bonus-3
+  rotate: false
+  xy: 132, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+bonus-4
+  rotate: false
+  xy: 2, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+bonus-5
+  rotate: false
+  xy: 132, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+bonus-6
+  rotate: false
+  xy: 262, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brown
+  rotate: false
+  xy: 132, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+default
+  rotate: false
+  xy: 262, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+power
+  rotate: false
+  xy: 392, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 1
+power
+  rotate: false
+  xy: 262, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 2
+power
+  rotate: false
+  xy: 392, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 3
+power
+  rotate: false
+  xy: 522, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 4
+spin-1
+  rotate: false
+  xy: 392, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spin-2
+  rotate: false
+  xy: 522, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spin-3
+  rotate: false
+  xy: 652, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spin-4
+  rotate: false
+  xy: 522, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spin-5
+  rotate: false
+  xy: 652, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spin-disabled
+  rotate: false
+  xy: 782, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

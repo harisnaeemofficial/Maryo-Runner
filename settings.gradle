@@ -1,2 +1,2 @@
-include 'desktop', 'android', 'ios', 'html', 'core', 'smc-level-parser', 'tools'
+include 'desktop', 'android', 'ios', 'html', 'core', 'smc-level-parser', 'tools', 'TAGenerator'
 

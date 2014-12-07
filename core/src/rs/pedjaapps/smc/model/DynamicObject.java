@@ -2,6 +2,8 @@ package rs.pedjaapps.smc.model;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Array;
+
 import java.util.List;
 
 import rs.pedjaapps.smc.Assets;
@@ -76,17 +78,17 @@ public abstract class DynamicObject extends GameObject
         // simulate maryos's movement on the X
         body.x += velocity.x;
 
-		List<GameObject> surroundingObjects = world.getLevel().getGameObjects();//world.getSurroundingObjects(this, 1);
+		Array<GameObject> surroundingObjects = world.level.gameObjects;//world.getSurroundingObjects(this, 1);
         // if m collides, make his horizontal velocity 0
         for (GameObject object : surroundingObjects) 
 		{
             if (object == null) continue;
-            if (body.overlaps(object.getBody()))
+            if (body.overlaps(object.body))
 			{
 				handleCollision(object, false);
             }
         }
-        if(body.x < 0 || body.x + body.width > world.getLevel().getWidth())
+        if(body.x < 0/* || body.x + body.width > world.getLevel().getWidth()*/)
         {
             velocity.x = 0;
         }
@@ -101,7 +103,7 @@ public abstract class DynamicObject extends GameObject
         for (GameObject object : surroundingObjects) 
 		{
             if (object == null) continue;
-            if (body.overlaps(object.getBody()))
+            if (body.overlaps(object.body))
 			{
 				handleCollision(object, true);
             }
@@ -136,7 +138,7 @@ public abstract class DynamicObject extends GameObject
 
     protected void handleCollision(GameObject object, boolean vertical)
 	{
-		if(object instanceof Sprite && ((Sprite)object).getType() == Sprite.Type.massive)
+		if(object instanceof Sprite && ((Sprite)object).type == Sprite.Type.massive)
 		{
 			if(vertical)
 			{
@@ -163,7 +165,7 @@ public abstract class DynamicObject extends GameObject
 				velocity.x = 0;
 			}
 		}
-		else if(object instanceof Sprite && ((Sprite)object).getType() == Sprite.Type.halfmassive)
+		else if(object instanceof Sprite && ((Sprite)object).type == Sprite.Type.halfmassive)
 		{
 			if(velocity.y < 0 && position.y > object.position.y + object.body.height)
 			{

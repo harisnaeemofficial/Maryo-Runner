@@ -17,3 +17,17 @@ default
   orig: 128, 128
   offset: 0, 0
   index: -1
+desert-active
+  rotate: false
+  xy: 262, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+sesert-default
+  rotate: false
+  xy: 392, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

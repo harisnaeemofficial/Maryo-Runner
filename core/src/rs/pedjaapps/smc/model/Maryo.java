@@ -27,7 +27,8 @@ public class Maryo extends DynamicObject
 
     private static final float RUNNING_FRAME_DURATION = 0.08f;
 	
-	protected static final float MAX_VEL          = 4f;
+	protected static final float MAX_VEL = 10f;
+	public static final float ACCELERATION = 4f;
 	private static final float GOD_MOD_TIMEOUT = 3000;//3 sec
 	
     WorldState worldState = WorldState.JUMPING;
@@ -232,10 +233,10 @@ public class Maryo extends DynamicObject
             {
                 if(go == null)continue;
                 if(go instanceof Sprite
-                        && (((Sprite)go).getType() == Sprite.Type.massive || ((Sprite)go).getType() == Sprite.Type.halfmassive)
-                        && rect.overlaps(go.getBody()))
+                        && (((Sprite)go).type == Sprite.Type.massive || ((Sprite)go).type == Sprite.Type.halfmassive)
+                        && rect.overlaps(go.body))
                 {
-					if(((Sprite)go).getType() == Sprite.Type.halfmassive && body.y < go.body.y + go.body.height)
+					if(((Sprite)go).type == Sprite.Type.halfmassive && body.y < go.body.y + go.body.height)
 					{
 						continue;
 					}
@@ -251,7 +252,7 @@ public class Maryo extends DynamicObject
             groundY = tmpGroundY;
 			if(closestObject != null 
 				&& closestObject instanceof Sprite 
-				&& ((Sprite)closestObject).getType() == Sprite.Type.halfmassive
+				&& ((Sprite)closestObject).type == Sprite.Type.halfmassive
 				&& worldState == WorldState.DUCKING)
 			{
 				position.y -= 0.1f;

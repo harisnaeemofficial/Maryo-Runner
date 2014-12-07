@@ -1,0 +1,40 @@
+
+signs.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_danger
+  rotate: false
+  xy: 2, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+1_danger
+  rotate: false
+  xy: 518, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 2
+1_ending
+  rotate: false
+  xy: 648, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+1_ending_big
+  rotate: false
+  xy: 260, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+1_ending_right_up
+  rotate: false
+  xy: 778, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

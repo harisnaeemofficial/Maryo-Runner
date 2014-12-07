@@ -3,14 +3,21 @@ package rs.pedjaapps.smc.utility;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Pool;
+
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Random;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +44,45 @@ import rs.pedjaapps.smc.model.items.Item;
  */
 public class LevelGenerator
 {
-    public Level level;
+	public World world;
+
+	float groundBlockY = -0.265625f;
+
+	RandomUtils random = new RandomUtils();
+
+	int currentCloudSetIndex = 0;
+
+	static final Array<Array<String>> clouds = new Array<Array<String>>();
+
+	static
+	{
+		Array<String> lightBlue = new Array<String>();
+		lightBlue.add("lightblue-left");
+		lightBlue.add("lightblue-middle");
+		lightBlue.add("lightblue-right");
+		clouds.add(lightBlue);
+
+		Array<String> lightYellow = new Array<String>();
+		lightYellow.add("lightyellow-1");
+		lightYellow.add("lightyellow-2");
+		lightYellow.add("lightyellow-3");
+		lightYellow.add("lightyellow-4");
+		lightYellow.add("lightyellow-5");
+		lightYellow.add("lightyellow-6");
+		lightYellow.add("lightyellow-7");
+		lightYellow.add("lightyellow-8");
+		lightYellow.add("lightyellow-9");
+		lightYellow.add("lightyellow-10");
+		clouds.add(lightYellow);
+
+		Array<String> cloudy = new Array<String>();
+		cloudy.add("cloudy-middle");
+		clouds.add(cloudy);
+
+		Array<String> grey = new Array<String>();
+		grey.add("grey");
+		clouds.add(grey);
+	}
 
 	private enum ObjectClass
 	{
@@ -49,18 +94,25 @@ public class LevelGenerator
 	private static final  float m_pos_z_front_passive_start = 0.1f;
 	private static final  float m_pos_z_halfmassive_start = 0.04f;
 
-    public LevelGenerator()
+    public LevelGenerator(World world)
     {
-        level = new Level();
+		this.world = world;
     }
 
 	/**
 	 * Preload level
 	 * Loads all starting data for level*/
-	public void preLoad(World world)
+	public void preLoad(OrthographicCamera cam)
 	{
+		//load player at starting position
+
+		Maryo maryo = new Maryo(world, new Vector3(2, 2, 0.0999f), new Vector2(0.9f, 0.9f));
+		maryo.loadTextures();
+		world.level.maryo = maryo;
+		world.level.gameObjects.add(maryo);
+
 		//load first music
-		level.music = "data/music/land/land_5.ogg";
+		world.level.music = "data/music/land/land_5.ogg";
 
 		//load first background
 		BackgroundColor backgroundColor = new BackgroundColor();
@@ -70,25 +122,90 @@ public class LevelGenerator
 		Color color2 = PoolManager.obtainColor();
 		color2.set(0, 0.392156863f, 0, 0);
 		backgroundColor.color2 = color2;
-		level.background = new Background(new Vector2(0, 0), "data/game/background/green_junglehills.png", backgroundColor);
+		world.level.background = new Background(new Vector2(0, 0), "data/game/background/green_junglehills.png", backgroundColor);
 
 		//load ground for visible area(screen width)
-		float start = -0.328125f;
+		float groundStartX = -0.328125f;
+		loadGround(groundStartX);
+		addClouds(cam.position.x - cam.viewportWidth / 2, cam.viewportWidth, cam.viewportHeight);
+	}
+
+	/**
+	 * Load ground for one camera viewport width*/
+	private void loadGround(float groundStartX)
+	{
 		for(int i = 0; i < Constants.CAMERA_WIDTH; i++)
 		{
-			float posx = start + i;
-			Sprite sprite = new Sprite(world, new Vector2(1, 1), new Vector3(posx,-0.265625f, m_pos_z_massive_start));
-			sprite.setTextureName("data/ground/green_3/ground/top/1.png");
-			sprite.setType(Sprite.Type.massive);
-			Assets.manager.load(sprite.getTextureName(), Texture.class);
+			float posx = groundStartX + i;
+			Sprite sprite = new Sprite(world, new Vector2(1, 1), new Vector3(posx, groundBlockY, m_pos_z_massive_start));
+			sprite.textureAtlas = "data/ground/green_3/green_3.pack";
+			sprite.textureName = sprite.textureAtlas + ":" + "top";
+			sprite.type = Sprite.Type.massive;
+			sprite.loadTextures();
+			world.level.gameObjects.add(sprite);
 		}
 	}
 
 	/**
 	 * Called from screens render method to generate more data for level*/
-	public void update(World world)
+	public void update(OrthographicCamera cam)
 	{
+		float camWidth = cam.viewportWidth;
+		float camHeight = cam.viewportHeight;
+		float camStartX = cam.position.x - camWidth / 2;
+		float camStartY = cam.position.y;
 
+		Rectangle rect = PoolManager.obtainRect();
+		rect.set(camStartX + camWidth - 0.1f, 0, 0.1f, camHeight);
+
+		boolean loadMore = false;
+		float lastGroundBlockEnd = 0;
+		for(GameObject go : world.level.gameObjects)
+		{
+			if(go instanceof Sprite && go.position.y == groundBlockY)
+			{
+				if(!rect.contains(go.bounds))
+				{
+					loadMore = true;
+				}
+				if(go.position.x + go.bounds.width > lastGroundBlockEnd)
+				{
+					lastGroundBlockEnd = go.position.x + go.bounds.width;
+				}
+			}
+		}
+
+		if(loadMore)
+		{
+			if(lastGroundBlockEnd != 0)
+			{
+				loadGround(lastGroundBlockEnd);
+			}
+
+			addClouds(camStartX, camWidth, camHeight);
+		}
+
+
+	}
+
+	private void addClouds(float camStartX, float camWidth, float camHeight)
+	{
+		//add 1-5 clouds on each screen on random elevations not too low
+		int cloudNum = random.nextInt(5);
+		Array<String> currentCloudSet = clouds.get(currentCloudSetIndex);
+		for(int i = 0; i < cloudNum; i++)
+		{
+			String cloudTxt = currentCloudSet.get(random.nextInt(currentCloudSet.size));
+			float height = random.nextFloat(1, 2);
+			float x = random.nextFloat(camStartX - 2, camStartX + camWidth + 2);
+			float y = random.nextFloat(3, camHeight - 0.5f);
+			Sprite sprite = new Sprite(world, PoolManager.obtainVector2().set(0, height), PoolManager.obtainVector3().set(x, y, m_pos_z_passive_start));
+			sprite.type = Sprite.Type.halfmassive;
+			sprite.textureAtlas = "data/clouds/clouds.pack";
+			sprite.textureName = sprite.textureAtlas + ":" + cloudTxt;
+			sprite.loadTextures();
+			world.level.gameObjects.add(sprite);
+		}
 	}
 
 	/*private void parseGameObjects(World world, MarioController controller, JSONObject level) throws JSONException
@@ -495,8 +612,8 @@ public class LevelGenerator
 		@Override
 		public int compare (GameObject sprite1, GameObject sprite2)
 		{
-			if(sprite1.getPosition().z > sprite2.getPosition().z) return 1;
-			if(sprite1.getPosition().z < sprite2.getPosition().z) return -1;
+			if(sprite1.position.z > sprite2.position.z) return 1;
+			if(sprite1.position.z < sprite2.position.z) return -1;
 			return 0;
 		}
 	}

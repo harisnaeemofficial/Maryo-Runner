@@ -63,7 +63,7 @@ public class Flyon extends Enemy
         long timeNow = System.currentTimeMillis();
         if((topReached && timeNow - maxPositionReachedTs < STAY_TOP_TIME))
         {
-			setVelocity(0, -Constants.GRAVITY);
+			velocity.set(0, -Constants.GRAVITY, velocity.z);
             return;
         }
         else
@@ -82,7 +82,7 @@ public class Flyon extends Enemy
         }
         if((bottomReached && timeNow - minPositionReachedTs < STAY_BOTTOM_TIME))
         {
-            setVelocity(0, 0);
+            velocity.set(0, 0, velocity.z);
             return;
         }
         else
@@ -101,11 +101,11 @@ public class Flyon extends Enemy
         }
         if(goingUp)
         {
-            setVelocity(0, velocity.y =+((Constants.CAMERA_HEIGHT - position.y)/3f));
+            velocity.set(0, velocity.y =+((Constants.CAMERA_HEIGHT - position.y)/3f), velocity.z);
         }
         else
         {
-			setVelocity(0, velocity.y =-((Constants.CAMERA_HEIGHT - position.y)/3f));
+			velocity.set(0, velocity.y =-((Constants.CAMERA_HEIGHT - position.y)/3f), velocity.z);
         }
 		
 		updatePosition(deltaTime);

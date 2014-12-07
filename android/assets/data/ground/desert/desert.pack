@@ -1,0 +1,82 @@
+
+desert.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ground-middle-1
+  rotate: false
+  xy: 2, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-2
+  rotate: false
+  xy: 2, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-left
+  rotate: false
+  xy: 132, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-middle-right
+  rotate: false
+  xy: 2, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-1
+  rotate: false
+  xy: 132, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-2
+  rotate: false
+  xy: 262, 328
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-left
+  rotate: false
+  xy: 132, 68
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-top-right
+  rotate: false
+  xy: 262, 198
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+rackabones_back
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+rackabones_front
+  rotate: false
+  xy: 392, 392
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+rackabones_middle
+  rotate: false
+  xy: 262, 132
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

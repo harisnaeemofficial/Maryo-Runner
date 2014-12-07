@@ -62,11 +62,11 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
         hudCam.position.set(screenWidth / 2, screenHeight / 2, 0);
         hudCam.update();
 
-        loader = new LevelGenerator();
+        world = new World(this);
+        loader = new LevelGenerator(world);
         debugFont = new BitmapFont();
         debugFont.setColor(Color.RED);
         debugFont.setScale(1.3f);
-        world = new World(this);
 
         exitDialog = new ConfirmDialog(this, hudCam);
     }
@@ -76,7 +76,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
     {
         Gdx.input.setCatchBackKey(true);
         Gdx.input.setInputProcessor(this);
-        music = Assets.manager.get(loader.level.music);
+        music = Assets.manager.get(loader.world.level.music);
         if (Assets.playMusic)music.play();
     }
 
@@ -127,7 +127,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
 
     private void drawObjects(float deltaTime)
     {
-        for (GameObject gameObject : loader.level.gameObjects)
+        for (GameObject gameObject : loader.world.level.gameObjects)
         {
 			gameObject.update(deltaTime);
             gameObject.render(batch);
@@ -181,7 +181,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
     @Override
     public void loadAssets()
     {
-        Array<String[]> data = loader.parseLevelData(Gdx.files.internal("data/levels/main_menu.data").readString());
+        /*Array<String[]> data = loader.parseLevelData(Gdx.files.internal("data/levels/main_menu.data").readString());
 
         for (String[] s : data)
         {
@@ -193,18 +193,18 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
             {
                 Assets.manager.load(s[1], LevelGenerator.getTextureClassForKey(s[0]));
             }
-        }
-        Assets.manager.load("data/hud/controls.pack", TextureAtlas.class);
-        Assets.manager.load("data/maryo/small.pack", TextureAtlas.class);
-		Assets.manager.load("data/hud/option.png", Texture.class);
+        }*/
+        Assets.manager.load("data/hud/controls.pack", TextureAtlas.class, Assets.atlasParameters);
+        Assets.manager.load("data/maryo/small.pack", TextureAtlas.class, Assets.atlasParameters);
+		Assets.manager.load("data/hud/option.png", Texture.class, Assets.textureParameter);
         cloudsPEffect = new ParticleEffect();
         cloudsPEffect.load(Gdx.files.internal("data/animation/particles/clouds_emitter.p"), Gdx.files.internal("data/clouds/default_1/"));
         cloudsPEffect.setPosition(Constants.CAMERA_WIDTH / 2, Constants.CAMERA_HEIGHT);
         cloudsPEffect.start();
 
-		Assets.manager.load("data/fonts/dejavu_sans.png", Texture.class);
+		Assets.manager.load("data/fonts/dejavu_sans.png", Texture.class, Assets.textureParameter);
 		Assets.manager.load("data/fonts/dejavu_sans.fnt", BitmapFont.class);
-		Assets.manager.load("data/hud/lock.png", Texture.class);
+		Assets.manager.load("data/hud/lock.png", Texture.class, Assets.textureParameter);
         exitDialog.loadAssets();
 		
     }
@@ -212,7 +212,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
     @Override
     public void afterLoadAssets()
     {
-        loader.parseLevel(world, null, Gdx.files.internal("data/levels/main_menu.smclvl").readString());
+        //loader.parseLevel(world, null, Gdx.files.internal("data/levels/main_menu.smclvl").readString());
 
         TextureAtlas controlsAtlas = Assets.manager.get("data/hud/controls.pack");
         play = controlsAtlas.findRegion("play");
@@ -236,7 +236,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
 
         Texture bgTexture = Assets.manager.get("data/game/background/more_hills.png");
         bgTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        bgr1 = new Background(new Vector2(0, 0), bgTexture);
+        //bgr1 = new Background(new Vector2(0, 0), bgTexture);
         bgr1.width = 8.7f;
         bgr1.height = 4.5f;
         bgr2 = new Background(bgr1);
@@ -250,7 +250,7 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
         gameLogo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         //gdxLogo = Assets.manager.get("/game/logo/libgdx.png");
         //gdxLogo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        world.setLevel(loader.getLevel());
+        //world.setLevel(loader.getLevel());
 
         TextureAtlas atlas = Assets.manager.get("data/maryo/small.pack");
         Assets.loadedRegions.put(GameObject.TKey.stand_right + ":" + Maryo.MaryoState.small, atlas.findRegion(GameObject.TKey.stand_right.toString()));

@@ -10,12 +10,13 @@ import java.util.List;
  */
 public class Level
 {
-    public List<GameObject> gameObjects;
+	public Maryo maryo;
+    public Array<GameObject> gameObjects;
 	public Background background;
     public String music;
 
 	public Level()
 	{
-		this.gameObjects = new ArrayList<GameObject>();
+		this.gameObjects = new Array<GameObject>();
 	}
 }

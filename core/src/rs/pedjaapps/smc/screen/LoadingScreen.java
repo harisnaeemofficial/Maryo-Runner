@@ -4,9 +4,12 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreetypeFontLoader;
 import com.badlogic.gdx.math.*;
 
 import rs.pedjaapps.smc.Assets;
+import rs.pedjaapps.smc.utility.Constants;
 
 /**
  * @author Mats Svensson
@@ -40,12 +43,18 @@ public class LoadingScreen extends AbstractScreen
         float camHeight = height/(width/camWidth);
         cam = new OrthographicCamera(camWidth, camHeight);
 
-        Texture fontTexture = new Texture(Gdx.files.internal("data/fonts/dejavu_sans.png"));
-        fontTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        font = new BitmapFont(Gdx.files.internal("data/fonts/dejavu_sans.fnt"), new TextureRegion(fontTexture), false);
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Constants.DEFAULT_FONT_FILE_NAME));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.characters = "Loading,pleswt.1234567890 ";
+        parameter.size = (int) (cam.viewportHeight / 20);
+        parameter.magFilter = Texture.TextureFilter.Linear;
+        parameter.minFilter = Texture.TextureFilter.Linear;
+        font = generator.generateFont(parameter);
         font.setColor(Color.WHITE);
-        font.setScale(0.25f);
+        generator.dispose();
+
         batch = new SpriteBatch();
+
         Texture bgTexture = new Texture(Gdx.files.internal("data/loading/loading_bg.jpg"));
         bgTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 

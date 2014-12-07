@@ -171,21 +171,21 @@ public class Box extends Sprite
 	{
 		Coin coin = new Coin(box.world, new Vector2(Coin.DEF_SIZE, Coin.DEF_SIZE), new Vector3(box.position));
 		String ta = Coin.DEF_ATL;
-		coin.setTextureAtlas(ta);
-		if (Assets.manager.isLoaded(coin.getTextureAtlas()))
+		coin.textureAtlas = ta;
+		if (Assets.manager.isLoaded(coin.textureAtlas))
 		{
 			coin.loadTextures();
 		}
 		else
 		{
 			throw new IllegalArgumentException("Atlas not found in AssetManager. Every TextureAtlas used"
-											   + "in [level].smclvl must also be included in [level].data (" + coin.getTextureAtlas() + ")");
+											   + "in [level].smclvl must also be included in [level].data (" + coin.textureAtlas + ")");
 		}
 		coin.collectable = false;
 		coin.visible = false;
 		
 		box.itemObject = coin;
-		loader.level.gameObjects.add(coin);
+		loader.world.level.gameObjects.add(coin);
 	}
 	
 	public void handleHitByPlayer()

@@ -1,0 +1,131 @@
+
+clouds.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cloudy-middle
+  rotate: false
+  xy: 776, 746
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+default
+  rotate: false
+  xy: 260, 454
+  size: 256, 64
+  orig: 256, 64
+  offset: 0, 0
+  index: -1
+default-left
+  rotate: false
+  xy: 2, 522
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+default-middle
+  rotate: false
+  xy: 260, 780
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+grey
+  rotate: false
+  xy: 906, 876
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+lightblue-left
+  rotate: false
+  xy: 776, 780
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+lightblue-middle
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+lightblue-right
+  rotate: false
+  xy: 260, 324
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+lightyellow-1
+  rotate: false
+  xy: 518, 518
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+lightyellow-10
+  rotate: false
+  xy: 2, 392
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-2
+  rotate: false
+  xy: 260, 650
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-3
+  rotate: false
+  xy: 518, 780
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-4
+  rotate: false
+  xy: 518, 584
+  size: 256, 64
+  orig: 256, 64
+  offset: 0, 0
+  index: -1
+lightyellow-5
+  rotate: false
+  xy: 2, 262
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-6
+  rotate: false
+  xy: 260, 520
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-7
+  rotate: false
+  xy: 518, 650
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-8
+  rotate: false
+  xy: 2, 132
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+lightyellow-9
+  rotate: false
+  xy: 2, 652
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

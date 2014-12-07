@@ -157,10 +157,10 @@ public class Furball extends Enemy
 		switch(direction)
 		{
 			case right:
-				setVelocity(velocity.x =- (turn ? VELOCITY_TURN : VELOCITY), velocity.y);
+				velocity.set(velocity.x =- (turn ? VELOCITY_TURN : VELOCITY), velocity.y, velocity.z);
 				break;
 			case left:
-				setVelocity(velocity.x =+ (turn ? VELOCITY_TURN : VELOCITY), velocity.y);
+				velocity.set(velocity.x =+ (turn ? VELOCITY_TURN : VELOCITY), velocity.y, velocity.z);
 				break;
 		}
 		turned = false;
@@ -172,8 +172,8 @@ public class Furball extends Enemy
         super.handleCollision(object, vertical);
 		if(!vertical)
 		{
-			if(((object instanceof Sprite && ((Sprite)object).getType() == Sprite.Type.massive
-					&& object.getBody().y + object.getBody().height > body.y + 0.1f)
+			if(((object instanceof Sprite && ((Sprite)object).type == Sprite.Type.massive
+					&& object.body.y + object.body.height > body.y + 0.1f)
 					|| object instanceof EnemyStopper
 					|| (object instanceof Enemy && this != object))
                     && !turned)

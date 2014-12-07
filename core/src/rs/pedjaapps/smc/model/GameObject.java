@@ -11,8 +11,8 @@ public abstract class GameObject
     public Rectangle bounds = new Rectangle();//used for draw
     public Rectangle body = new Rectangle();//used for collision detection
 	public Vector3 position = new Vector3();
-    protected Vector3 velocity = new Vector3();
-    protected Vector3 acceleration = new Vector3();
+    public Vector3 velocity = new Vector3();
+    public Vector3 acceleration = new Vector3();
     protected World world;
     boolean isFront = false;// is sprite drawn after player, so that it appears like player walks behind it
     
@@ -69,62 +69,6 @@ public abstract class GameObject
     {
         bounds.x = body.x;
         bounds.y = body.y;
-    }
-
-    public Rectangle getBounds()
-    {
-        return bounds;
-    }
-
-    public void setBounds(Rectangle bounds)
-    {
-        this.bounds = bounds;
-    }
-
-    public boolean isFront()
-    {
-        return isFront;
-    }
-
-    public void setFront(boolean isFront)
-    {
-        this.isFront = isFront;
-    }
-	
-	public Vector3 getPosition()
-    {
-        return position;
-    }
-
-    public void setPosition(Vector3 position)
-    {
-        this.position = position;
-    }
-
-    public Vector3 getVelocity()
-    {
-        return velocity;
-    }
-
-    public void setVelocity(Vector3 velocity)
-    {
-        this.velocity = velocity;
-    }
-
-    public void setVelocity(float x, float y)
-    {
-        velocity.x = x;
-		velocity.y = y;
-    }
-
-    public Rectangle getBody()
-    {
-        return body;
-    }
-
-    public void setBody(Rectangle body)
-    {
-        this.body = body;
     }
 
     public abstract void render(SpriteBatch spriteBatch);

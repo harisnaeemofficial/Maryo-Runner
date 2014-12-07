@@ -1,0 +1,19 @@
+
+green_3.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+top
+  rotate: false
+  xy: 132, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+top-left
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

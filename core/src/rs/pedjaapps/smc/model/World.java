@@ -13,13 +13,9 @@ public class World
 {
 	public AbstractScreen screen;
     /**
-     * Our player controlled hero *
-     */
-    Maryo mario;
-    /**
      * A world has a level through which Mario needs to go through *
      */
-    Level level;
+    public Level level;
     Array<GameObject> visibleObjects;
 	
 	/**
@@ -38,38 +34,6 @@ public class World
 		}
 	};
 
-	public void setScreen(AbstractScreen screen)
-	{
-		this.screen = screen;
-	}
-
-	public AbstractScreen getScreen()
-	{
-		return screen;
-	}
-
-    // Getters -----------
-
-    public Maryo getMario()
-    {
-        return mario;
-    }
-
-    public Level getLevel()
-    {
-        return level;
-    }
-
-    public void setMario(Maryo mario)
-    {
-        this.mario = mario;
-    }
-
-    public void setLevel(Level level)
-    {
-        this.level = level;
-    }
-
     /**
      * Return only the blocks that need to be drawn *
      * 
@@ -85,7 +49,7 @@ public class World
 		worldBounds.set(wX, wY, wW, wH);
         for (GameObject object : level.gameObjects)
         {
-            Rectangle bounds = object.getBounds();
+            Rectangle bounds = object.bounds;
             if (bounds.overlaps(worldBounds)/* || object instanceof Enemy*/)
             {
                 objects.add(object);
@@ -98,15 +62,15 @@ public class World
 	public List<GameObject> getSurroundingObjects(GameObject center, float offset)
     {
         List<GameObject> objects = new ArrayList<GameObject>();
-        float wX = center.getBody().x - offset;
-        float wY = center.getBody().y - offset;
-        float wW = center.getBody().x + center.getBody().width + offset * 2;
-        float wH = center.getBody().y + center.getBody().height + offset * 2;
+        float wX = center.body.x - offset;
+        float wY = center.body.y - offset;
+        float wW = center.body.x + center.body.width + offset * 2;
+        float wH = center.body.y + center.body.height + offset * 2;
         Rectangle offsetBounds = rectPool.obtain();
 		offsetBounds.set(wX, wY, wW, wH);
         for (GameObject object : level.gameObjects)
         {
-            Rectangle bounds = object.getBounds();
+            Rectangle bounds = object.bounds;
             if (bounds.overlaps(offsetBounds)/* || object instanceof Enemy*/)
             {
                 objects.add(object);
@@ -117,10 +81,10 @@ public class World
 	
 	public Rectangle createMaryoRectWithOffset(float offset)
 	{
-		float wX = mario.getBody().x - offset;
-        float wY = mario.getBody().y - offset;
-        float wW = mario.getBody().x + mario.getBody().width + offset * 2;
-        float wH = mario.getBody().y + mario.getBody().height + offset * 2;
+		float wX = level.maryo.body.x - offset;
+        float wY = level.maryo.body.y - offset;
+        float wW = level.maryo.body.x + level.maryo.body.width + offset * 2;
+        float wH = level.maryo.body.y + level.maryo.body.height + offset * 2;
         Rectangle offsetBounds = rectPool.obtain();
 		offsetBounds.set(wX, wY, wW, wH);
      	return offsetBounds;
@@ -130,6 +94,7 @@ public class World
     public World(AbstractScreen screen)
     {
 		this.screen = screen;
+        level = new Level();
     }
 
     public Array<GameObject> getVisibleObjects()

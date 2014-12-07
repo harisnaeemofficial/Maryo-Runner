@@ -1,5 +1,6 @@
 package rs.pedjaapps.smc.model;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.*;
 import rs.pedjaapps.smc.Assets;
@@ -7,15 +8,23 @@ import rs.pedjaapps.smc.utility.Utility;
 
 public class Sprite extends GameObject
 {
-    protected String textureAtlas;
-    protected String textureName;//name of texture from pack or png
-    protected Type type = null;
+    public String textureAtlas;
+    public String textureName;//name of texture from pack or png
+    public Type type = null;
 
     @Override
     public void render(SpriteBatch spriteBatch)
     {
-		TextureRegion region = Assets.loadedRegions.get(textureName);
-		Utility.draw(spriteBatch, region, position.x, position.y, bounds.height);
+        if(textureAtlas != null)
+        {
+            TextureRegion region = Assets.loadedRegions.get(textureName);
+            Utility.draw(spriteBatch, region, position.x, position.y, bounds.height);
+        }
+        else
+        {
+            Texture texture = Assets.manager.get(textureName);
+            Utility.draw(spriteBatch, texture, position.x, position.y, bounds.height);
+        }
         
     }
 
@@ -28,7 +37,11 @@ public class Sprite extends GameObject
     @Override
     public void loadTextures()
     {
-
+        if(textureAtlas != null)
+        {
+            TextureAtlas atlas = Assets.manager.get(textureAtlas, TextureAtlas.class);
+            Assets.loadedRegions.put(textureName, atlas.findRegion(textureName.split(":")[1]));
+        }
     }
 
     /**
@@ -46,43 +59,6 @@ public class Sprite extends GameObject
     {
         super(world, size, position);
         this.position = position;
-    }
-
-    
-
-    public String getTextureAtlas()
-    {
-        return textureAtlas;
-    }
-
-    public void setTextureAtlas(String textureAtlas)
-    {
-        this.textureAtlas = textureAtlas;
-    }
-
-    public String getTextureName()
-    {
-        return textureName;
-    }
-
-    public void setTextureName(String textureName)
-    {
-        this.textureName = textureName;
-    }
-
-    public void setBounds(Rectangle bounds)
-    {
-        this.bounds = bounds;
-    }
-
-    public Type getType()
-    {
-        return type;
-    }
-
-    public void setType(Type type)
-    {
-        this.type = type;
     }
 
     @Override

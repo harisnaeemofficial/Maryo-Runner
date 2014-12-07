@@ -1,0 +1,131 @@
+
+castle.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eato
+  rotate: false
+  xy: 2, 330
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+fireplant
+  rotate: false
+  xy: 2, 200
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+furball
+  rotate: false
+  xy: 132, 330
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ground-bottom
+  rotate: false
+  xy: 392, 296
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-bottom-left
+  rotate: false
+  xy: 2, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-middle
+  rotate: false
+  xy: 392, 262
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-middle-left
+  rotate: false
+  xy: 36, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-middle-left-bottom
+  rotate: false
+  xy: 522, 426
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-middle-left-top
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-top
+  rotate: false
+  xy: 522, 392
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-top-left
+  rotate: false
+  xy: 426, 296
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+moon
+  rotate: false
+  xy: 2, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+mushroom
+  rotate: false
+  xy: 132, 200
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+plinth-1
+  rotate: false
+  xy: 262, 330
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+shell
+  rotate: false
+  xy: 132, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+small-maryo
+  rotate: false
+  xy: 262, 200
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spika
+  rotate: false
+  xy: 392, 330
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spikeball
+  rotate: false
+  xy: 262, 70
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

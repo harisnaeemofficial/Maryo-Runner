@@ -1,0 +1,229 @@
+
+blocks.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 2, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 1
+blue_x
+  rotate: false
+  xy: 2, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-black
+  rotate: false
+  xy: 132, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-blue
+  rotate: false
+  xy: 2, 556
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-green
+  rotate: false
+  xy: 132, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-grey
+  rotate: false
+  xy: 262, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-red
+  rotate: false
+  xy: 2, 426
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-white
+  rotate: false
+  xy: 132, 556
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+brick-yellow
+  rotate: false
+  xy: 262, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: false
+  xy: 392, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+corded
+  rotate: false
+  xy: 2, 296
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ice1
+  rotate: false
+  xy: 132, 426
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ice2
+  rotate: false
+  xy: 262, 556
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ice3
+  rotate: false
+  xy: 392, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+mushroom
+  rotate: false
+  xy: 522, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+sand1
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+sand2
+  rotate: false
+  xy: 2, 166
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+sand3
+  rotate: false
+  xy: 132, 296
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+sand4
+  rotate: false
+  xy: 262, 426
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+screw
+  rotate: false
+  xy: 392, 556
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+slime
+  rotate: false
+  xy: 522, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-black
+  rotate: false
+  xy: 652, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-blue
+  rotate: false
+  xy: 2, 36
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-green
+  rotate: false
+  xy: 132, 166
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-grey
+  rotate: false
+  xy: 262, 296
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-red
+  rotate: false
+  xy: 392, 426
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-violet
+  rotate: false
+  xy: 522, 556
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone-2-yellow
+  rotate: false
+  xy: 652, 686
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone1
+  rotate: false
+  xy: 782, 816
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+stone2
+  rotate: false
+  xy: 132, 36
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+wood1
+  rotate: false
+  xy: 262, 166
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+wood2
+  rotate: false
+  xy: 392, 296
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

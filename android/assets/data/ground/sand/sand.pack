@@ -1,0 +1,61 @@
+
+sand.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ground-left-up
+  rotate: false
+  xy: 260, 904
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-middle
+  rotate: false
+  xy: 326, 970
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ground-up
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+sphinx-medium
+  rotate: false
+  xy: 2, 102
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+tendril
+  rotate: false
+  xy: 2, 36
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+tendril-top
+  rotate: false
+  xy: 260, 938
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+vase
+  rotate: false
+  xy: 2, 490
+  size: 256, 512
+  orig: 256, 512
+  offset: 0, 0
+  index: -1
+vase-broken
+  rotate: false
+  xy: 2, 232
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
