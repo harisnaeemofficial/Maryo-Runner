@@ -91,8 +91,8 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
         batch.setProjectionMatrix(drawCam.combined);
         batch.begin();
 
-		bgr1.render(batch);
-        bgr2.render(batch);
+		bgr1.render(drawCam, batch);
+        bgr2.render(drawCam, batch);
 
         cloudsPEffect.draw(batch, delta);
 
@@ -237,15 +237,15 @@ public class MainMenuScreen extends AbstractScreen implements InputProcessor
         Texture bgTexture = Assets.manager.get("data/game/background/more_hills.png");
         bgTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         //bgr1 = new Background(new Vector2(0, 0), bgTexture);
-        bgr1.width = 8.7f;
+        /*bgr1.width = 8.7f;
         bgr1.height = 4.5f;
         bgr2 = new Background(bgr1);
-        bgr2.position = new Vector2(bgr1.width, 0);
+        bgr2.position1 = new Vector2(bgr1.width, 0);
 
         bgColor = new BackgroundColor();
         bgColor.color1 = new Color(.117f, 0.705f, .05f, 0f);//color is 0-1 range where 1 = 255
         bgColor.color2 = new Color(0f, 0.392f, 0.039f, 0f);
-
+*/
         gameLogo = Assets.manager.get("data/game/logo/smc_big_1.png");
         gameLogo.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         //gdxLogo = Assets.manager.get("/game/logo/libgdx.png");

@@ -74,13 +74,11 @@ public class ConfirmDialog
 
     public void loadAssets()
     {
-        Assets.manager.load("data/hud/SMCLook512.pack", TextureAtlas.class, Assets.atlasParameters);
-
         FreetypeFontLoader.FreeTypeFontLoaderParameter params = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
         params.fontFileName = Constants.DEFAULT_FONT_FILE_NAME;
         params.fontParameters.magFilter = Texture.TextureFilter.Linear;
         params.fontParameters.minFilter = Texture.TextureFilter.Linear;
-        params.fontParameters.size = (int) (cam.viewportWidth / 20);
+        params.fontParameters.size = (int) (cam.viewportHeight / 20);
         params.fontParameters.characters = "YesNoOESAryuwantqi?lvdpgb.DQ";
         Assets.manager.load("confirm_dialog.ttf", BitmapFont.class, params);
     }

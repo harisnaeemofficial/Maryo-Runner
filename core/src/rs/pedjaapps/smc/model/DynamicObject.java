@@ -17,7 +17,7 @@ public abstract class DynamicObject extends GameObject
     protected static final float DAMP             = 0.90f;
     protected static final float DEF_MAX_VEL = 4f;
 	
-	protected boolean grounded = false;
+	public boolean grounded = false;
 
     long lasHitSoundPlayed;
 	
@@ -48,7 +48,7 @@ public abstract class DynamicObject extends GameObject
         acceleration.scl(delta);
 
         // apply acceleration to change velocity
-        velocity.add(acceleration);
+        //velocity.add(acceleration);
 
         // checking collisions with the surrounding blocks depending on Bob's velocity
         checkCollisionWithBlocks(delta);

@@ -42,6 +42,19 @@ public class Sprite extends GameObject
             TextureAtlas atlas = Assets.manager.get(textureAtlas, TextureAtlas.class);
             Assets.loadedRegions.put(textureName, atlas.findRegion(textureName.split(":")[1]));
         }
+		if(bounds.width == 0)
+		{
+		if(textureAtlas != null)
+        {
+            TextureRegion region = Assets.loadedRegions.get(textureName);
+            bounds.width = bounds.height * region.getRegionWidth()/region.getRegionHeight();
+        }
+        else
+        {
+            Texture texture = Assets.manager.get(textureName);
+            bounds.width = bounds.height * texture.getWidth()/texture.getHeight();
+		}
+		}
     }
 
     /**

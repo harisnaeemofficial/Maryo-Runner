@@ -59,7 +59,7 @@ public class MarioController
 
     public void jumpPressed()
     {
-        if(world.level.maryo.isGrounded())
+        if(world.level.maryo.grounded)
         {
             keys.add(Keys.JUMP);
 
@@ -113,13 +113,13 @@ public class MarioController
      */
     public void update(float delta)
     {
-        world.level.maryo.setGrounded(world.level.maryo.position.y - world.level.maryo.groundY < 0.1f);
-		if(!world.level.maryo.isGrounded())
+        world.level.maryo.grounded = world.level.maryo.position.y - world.level.maryo.groundY < 0.1f;
+		if(!world.level.maryo.grounded)
 		{
             world.level.maryo.setWorldState(Maryo.WorldState.JUMPING);
 		}
         processInput();
-        if (world.level.maryo.isGrounded() && world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
+        if (world.level.maryo.grounded && world.level.maryo.getWorldState().equals(Maryo.WorldState.JUMPING))
         {
             world.level.maryo.setWorldState(Maryo.WorldState.IDLE);
         }

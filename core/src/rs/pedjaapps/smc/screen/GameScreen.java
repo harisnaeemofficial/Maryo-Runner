@@ -166,7 +166,7 @@ public class GameScreen extends AbstractScreen implements InputProcessor
     @Override
     public void render(float delta)
     {
-		if (delta > 0.1f) delta = 0.1f;
+		//if (delta > 0.1f) delta = 0.1f;
         loader.update(cam);
         //debug
         //delta = 0.0666f;
@@ -203,17 +203,17 @@ public class GameScreen extends AbstractScreen implements InputProcessor
         exitDialog.render(spriteBatch);
 
 		//cleanup
-        Array<GameObject> visibleObjects = world.getVisibleObjects();
-        Array<GameObject> notVisible = new Array<GameObject>(world.level.gameObjects);
-        notVisible.removeAll(visibleObjects, true);
-        world.trashObjects.addAll(notVisible);
+        //Array<GameObject> visibleObjects = world.getVisibleObjects();
+        //Array<GameObject> notVisible = new Array<GameObject>(world.level.gameObjects);
+        //notVisible.removeAll(visibleObjects, false);
+        //world.trashObjects.addAll(notVisible);
 
-        world.level.gameObjects.removeAll(world.trashObjects, true);
+        world.level.gameObjects.removeAll(world.trashObjects/*notVisible*/, false);
 		/*for(GameObject obj : world.trashObjects)
 		{
 			world.level.gameObjects.remove(obj);
 		}*/
-        System.out.println("go list size: " + world.level.gameObjects.size);
+        //System.out.println("go list size: " + world.level.gameObjects.size);
     }
 
 	private void handleGameOver(float delta)
@@ -281,7 +281,7 @@ public class GameScreen extends AbstractScreen implements InputProcessor
         bgCam.update();
         spriteBatch.setProjectionMatrix(bgCam.combined);
         spriteBatch.begin();
-		world.level.background.render(spriteBatch);
+		world.level.background.render(bgCam, spriteBatch);
 		//world.getLevel().getBg2().render(spriteBatch);
         spriteBatch.end();
 	}
@@ -317,7 +317,8 @@ public class GameScreen extends AbstractScreen implements InputProcessor
 				}
 			}
 		}
-		for (GameObject object : world.getDrawableObjects(cam.position.x, cam.position.y))
+		Array<GameObject> objects = world.getDrawableObjects(cam.position.x, cam.position.y);
+		for (GameObject object : objects)
         {
             object.render(spriteBatch);
         }

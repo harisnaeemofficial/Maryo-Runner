@@ -32,7 +32,7 @@ public class Maryo extends DynamicObject
 	private static final float GOD_MOD_TIMEOUT = 3000;//3 sec
 	
     WorldState worldState = WorldState.JUMPING;
-    private MaryoState maryoState = GameSaveUtility.getInstance().save.playerState;
+    MaryoState maryoState = GameSaveUtility.getInstance().save.playerState;
     boolean facingLeft = false;
     boolean longJump = false;
 
@@ -357,16 +357,6 @@ public class Maryo extends DynamicObject
         grounded = velocity.y == 0;
 		return grounded;
     }
-	
-	public void setGrounded(boolean grounded)
-	{
-		this.grounded = grounded;
-	}
-	
-	public boolean isGrounded()
-	{
-		return grounded;
-	}
 
 	@Override
 	public float maxVelocity()

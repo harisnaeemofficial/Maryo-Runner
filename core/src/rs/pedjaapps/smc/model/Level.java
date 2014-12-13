@@ -17,6 +17,6 @@ public class Level
 
 	public Level()
 	{
-		this.gameObjects = new Array<GameObject>();
+		this.gameObjects = new Array<GameObject>(false, 100);
 	}
 }

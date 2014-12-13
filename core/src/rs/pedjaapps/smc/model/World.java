@@ -54,6 +54,10 @@ public class World
             {
                 objects.add(object);
             }
+			else if(object.position.x < wX)
+			{
+				trashObjects.add(object);
+			}
         }
         visibleObjects = objects;
         return objects;

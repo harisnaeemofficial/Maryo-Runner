@@ -1,34 +1,44 @@
 package rs.pedjaapps.smc.model;
 
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.graphics.g2d.*;
-
-import rs.pedjaapps.smc.Assets;
-import rs.pedjaapps.smc.utility.Constants;
+import com.badlogic.gdx.math.*;
+import com.badlogic.gdx.utils.*;
+import rs.pedjaapps.smc.*;
+import rs.pedjaapps.smc.utility.*;
 
 public class Background
 {
-	public static final float WIDTH = Constants.CAMERA_WIDTH;
-	public static final float HEIGHT = Constants.CAMERA_HEIGHT;
-	public Vector2 position;
+	public Array<Vector2> positions;
+	public Array<Vector2> trashPositions;
 	public String textureName;
 	public float width;
 	public float height;
 	public BackgroundColor bgColor;
 
-	public Background(Vector2 position, String textureName, BackgroundColor bgColor)
+	public Background(Camera cam, String textureName, BackgroundColor bgColor)
 	{
 		this.bgColor = bgColor;
-		this.position = position;
+		Texture texture = Assets.manager.get(textureName);
+		height = cam.viewportHeight;
+		width = height * texture.getWidth() / texture.getHeight();
+		
+		int initCap = Math.max(1, (int)Math.ceil(cam.viewportWidth / width));
+		positions = new Array<>(true, initCap);
+		
+		for(int i = 0; i < initCap; i++)
+		{
+			positions.add(new Vector2(i * width, 0));
+		}
+		
+		
+		trashPositions = new Array<>(false, 2);
 		this.textureName = textureName;
-		width = WIDTH;
-		height = HEIGHT;
 	}
 	
 	public Background(Background bgr)
 	{
-		position = bgr.position;
+		positions = bgr.positions;
 		textureName = bgr.textureName;
 		width = bgr.width;
 		height = bgr.height;
@@ -39,8 +49,26 @@ public class Background
 		bgColor.render(camera);
 	}
 	
-	public void render(SpriteBatch spriteBatch)
+	public void render(Camera cam, SpriteBatch spriteBatch)
 	{
-		spriteBatch.draw(Assets.manager.get(textureName, Texture.class), position.x, position.y, width, height);
+		Texture texture = Assets.manager.get(textureName);
+
+		Vector2 lastPosition = positions.size == 0 ? null : positions.get(positions.size - 1);
+		if(lastPosition != null && lastPosition.x < cam.position.x + cam.viewportWidth / 2)
+		{
+			positions.add(PoolManager.obtainVector2().set(lastPosition.x + width, lastPosition.y));
+		}
+		
+		for(Vector2 position : positions)
+		{
+			if(position.x + width < cam.position.x - cam.viewportWidth / 2)
+			{
+				trashPositions.add(position);
+				continue;
+			}
+			spriteBatch.draw(texture, position.x, position.y, width, height);
+		}
+		
+		positions.removeAll(trashPositions, false);
 	}
 }

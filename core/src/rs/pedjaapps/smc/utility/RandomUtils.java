@@ -24,6 +24,6 @@ public class RandomUtils extends Random
 
     public float nextFloat(float min, float max)
     {
-        return nextFloat() * (min - max) + min;
+        return nextFloat() * (max - min) + min;
     }
 }
