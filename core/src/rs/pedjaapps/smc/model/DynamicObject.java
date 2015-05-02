@@ -48,12 +48,12 @@ public abstract class DynamicObject extends GameObject
         acceleration.scl(delta);
 
         // apply acceleration to change velocity
-        //velocity.add(acceleration);
+        velocity.add(acceleration);
 
         // checking collisions with the surrounding blocks depending on Bob's velocity
         checkCollisionWithBlocks(delta);
 
-        // apply damping to halt Maryo nicely 
+        // apply damping to halt Maryo nicely
         velocity.x *= DAMP;
 
         // ensure terminal velocity is not exceeded
@@ -88,7 +88,7 @@ public abstract class DynamicObject extends GameObject
 				handleCollision(object, false);
             }
         }
-        if(body.x < 0/* || body.x + body.width > world.getLevel().getWidth()*/)
+        if(body.x < 0)
         {
             velocity.x = 0;
         }

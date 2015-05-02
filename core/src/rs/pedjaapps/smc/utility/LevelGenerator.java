@@ -54,7 +54,7 @@ public class LevelGenerator
 	int currentCloudSetIndex = 0;
 
 	static final Array<Array<String>> clouds = new Array<Array<String>>();
-	static final Array<Array<SpriteDescriptor>> groundDecoration = new Array<>();
+	static final Array<Array<SpriteDescriptor>> groundDecoration = new Array<Array<SpriteDescriptor>>();
 
 	static
 	{
@@ -85,7 +85,7 @@ public class LevelGenerator
 		grey.add("grey");
 		clouds.add(grey);
 		
-		Array<SpriteDescriptor> green1 = new Array<>();
+		Array<SpriteDescriptor> green1 = new Array<SpriteDescriptor>();
 		SpriteDescriptor sd = new SpriteDescriptor();
 		sd.pack = "data/ground/green_1.pack";
 		sd.region = "big1";

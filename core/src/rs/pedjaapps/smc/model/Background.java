@@ -24,7 +24,7 @@ public class Background
 		width = height * texture.getWidth() / texture.getHeight();
 		
 		int initCap = Math.max(1, (int)Math.ceil(cam.viewportWidth / width));
-		positions = new Array<>(true, initCap);
+		positions = new Array<Vector2>(true, initCap);
 		
 		for(int i = 0; i < initCap; i++)
 		{
@@ -32,7 +32,7 @@ public class Background
 		}
 		
 		
-		trashPositions = new Array<>(false, 2);
+		trashPositions = new Array<Vector2>(false, 2);
 		this.textureName = textureName;
 	}
 	

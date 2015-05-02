@@ -128,7 +128,7 @@ public class MarioController
         {
             world.level. maryo.setWorldState(Maryo.WorldState.WALKING);
         }
-        world.level.maryo.velocity.set(world.level.maryo.velocity.x += Maryo.ACCELERATION, world.level.maryo.velocity.y, world.level.maryo.velocity.z);
+        world.level.maryo.velocity.add(Maryo.ACCELERATION, 0, 0);
 	}
 
     /**
@@ -142,7 +142,7 @@ public class MarioController
         {
             if (!jumped && vel.y < MAX_JUMP_SPEED && System.currentTimeMillis() - jumpClickTime < LONG_JUMP_PRESS)
             {
-                world.level.maryo.velocity.set(vel.x, vel.y += 2f, vel.z);
+                world.level.maryo.velocity.add(0, 2f, 0);
             }
             else
             {
@@ -182,8 +182,6 @@ public class MarioController
             {
                 world.level.maryo.setWorldState(Maryo.WorldState.IDLE);
             }
-            //slowly decrease linear velocity on x axes
-            world.level.maryo.velocity.set(vel.x * 0.7f, /*vel.y > 0 ? vel.y * 0.7f : */vel.y, vel.z);
         }
         return false;
     }
